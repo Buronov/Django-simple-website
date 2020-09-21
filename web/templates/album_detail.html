@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Album Detail{% endblock title %}
+
+
+{% block content %}
+
+<div class="container m-5">
+	<h1>SINGER: <b>{{instance.singer}}</h1></b>
+	<h2>TITLE: {{instance.title}}</h2>
+	{% for song in instance.song_set.all %}
+		<li class="list-group"><h4>{{song.file_type}}</h4></li><br>
+	{% endfor %}
+	<img src="{{instance.logo.url}}" class="rounded float-right shadow p-4 mb-4 bg-white">
+	<br><br>
+
+
+{% for song in instance.song_set.all %}
+		<button class="btn btn-primary"><a href="{{ song.file.url }}" class="text-light text-decoration-none">Download</a></button>
+{% endfor %}
+
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Album Lists{% endblock title %}
+
+{% block content %}
+
+
+
+
+	{% for album in albums %}
+<div class="container mt-2 col-md-7 ">
+<div class="shadow">
+
+    <li class="list-group-item "><a href="{% url 'album_detail' id=album.id %} " class="text-decoration-none ">{{album.singer}} - {{album.title}}</a></li>
+ 
+</div>
+</div>
+<i class="fab fa-telegram"></i>
+
+	{% endfor %}
+
+
+{% endblock content %}

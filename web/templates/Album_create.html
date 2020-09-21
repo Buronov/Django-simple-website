@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Album Lists{% endblock title %}
+
+
+
+{% block content %}
+<div class="container m-5">
+	<form action="" method="POST", enctype="Multipart/form-data">
+		<div class="form-group">
+	    	<label for="exampleInputEmail1">{{form.as_p}}</label>
+ 		</div>
+
+		<div class="input-group input-group-sm mb-3">
+		  <input type="submit" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="Create Album">
+		</div>
+		{% csrf_token %}
+	</form>
+</div>
+
+
+
+
+	<!-- <input type="submit" name="Create Album">	 -->
+
+{% endblock content %}
